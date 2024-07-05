@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .bg {
+      background-image: url("home.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .btn {
+      background-color: #4979B8;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+    }
+    .btn:hover {
+      background-color: #333;
+    }
+    .btn2 {
+      right: 150px;
+      top: 50px;
+    }
+    .btn3 {
+      right: 50px;
+      top: 50px;
+    }
+    .btn-home {
+      right: 250px;
+      top: 50px;
+    }
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+    .container {
+      padding: 16px;
+    }
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s;
+    }
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      right: 150px;
+      top: 80px;
+      background-color: white;
+      border: 1px solid #ccc;
+      z-index: 2;
+    }
+    .menu-content button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: white;
+      cursor: pointer;
+      text-align: left;
+    }
+    .menu-content button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <button class="btn btn2" onclick="toggleMenu()"><i class="fa fa-bars"></i> Menu</button>
+  <div class="menu-content" id="menuContent">
+    <button onclick="location.href='menu.html'">Biryani</button>
+    <button onclick="location.href='friedrice.html'">Fried Rice</button>
+  </div>
+  <button class="btn btn3" onclick="closeWindow()"><i class="fa fa-close"></i> Close</button>
+  <button class="btn btn-home" onclick="location.href='receipes.html'"><i class="fa fa-home"></i> Home</button>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    function toggleMenu() {
+      var menuContent = document.getElementById('menuContent');
+      if (menuContent.style.display === "none" || menuContent.style.display === "") {
+        menuContent.style.display = "block";
+      } else {
+        menuContent.style.display = "none";
+      }
+    }
+
+    function closeWindow() {
+      window.open('', '_self', '');
+      window.close();
+    }
+  </script>
+</body>
+</html>
